@@ -7,9 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 	
-<a href="https://google.com" target="_self"><h1> Teste </h1> </a>
-    
-    
+<a href="https://google.com" target="_self" onclick="onDeviceReady()"><h1> Teste </h1> </a>    
+
+
+    <script>
+    document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+    window.open = cordova.InAppBrowser.open('https://google.com', '_blank', 'location=yes');
+}
+onDeviceReady();
+    </script>
 </body>
 
 </html>
